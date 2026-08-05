@@ -12,17 +12,18 @@ Súčasťou je diagnostika multikolinearity (VIF, Belsley-Kuh-Welsch) a porovnan
 
 ## Hlavné zistenia
 
-Finálny model má 11 prediktorov, všetky štatisticky významné (väčšina na hladine 1 %). Pravdepodobnosť urgentnej návštevy **zvyšujú**: africko-americký pôvod, počet pádov, počet hypoglykemických epizód, potreba určenej pomoci v škole, nezamestnanosť a návšteva aj z iného dôvodu. Pravdepodobnosť **znižujú**: mužské pohlavie, používanie inzulínovej pumpy, vyššie vzdelanie a (mierne) vyššie náklady na starostlivosť.
+Finálny model má 12 prediktorov, všetky štatisticky významné (väčšina na hladine 1 %). Pravdepodobnosť urgentnej návštevy **zvyšujú**: africko-americký pôvod, nezamestnanosť, počet pádov, návšteva zariadenia aj z iného dôvodu, postihnutie končatín a ťažká hypoglykémia. Prekvapivo rovnakým smerom pôsobia aj **určená pomocná osoba v škole** a **vždy dostupná pomoc** — pravdepodobne ako „signál" horšie kompenzovaného pacienta (reverzná kauzalita), nie ako príčina. Pravdepodobnosť **znižujú**: mužské pohlavie, používanie inzulínovej pumpy, vyššie vzdelanie a (mierne) vyššie náklady na starostlivosť.
 
 | Ukazovateľ | Hodnota |
 |:--|--:|
 | Počet pozorovaní | 2 454 |
-| Významné prediktory | 11 / 11 |
-| McFadden R² | 0,159 |
-| Max VIF | < 1,5 (žiadna kolinearita) |
-| Correctly predicted | 94,0 % |
+| Významné prediktory | 12 / 12 |
+| McFadden R² | 0,164 |
+| Multikolinearita (VIF) | bez problémov |
+| Correctly predicted | 94,2 % |
+| ROC-AUC | 0,789 |
 
-Poznámka k interpretácii: vysoká „správnosť predikcie" (94 %) je do veľkej miery dôsledkom nevyváženosti — urgentné návštevy tvoria len ~6 % prípadov, takže model, ktorý väčšinou predpovedá „bez návštevy", má prirodzene vysokú presnosť. Zmysluplnejší je pohľad na jednotlivé koeficienty a ich smer než na celkovú úspešnosť. Model neslúži na presnú predikciu, ale na identifikáciu determinantov.
+Poznámka k interpretácii: vysoká „správnosť predikcie" (94,2 %) je do veľkej miery dôsledkom nevyváženosti — urgentné návštevy tvoria len ~6 % prípadov, takže model, ktorý väčšinou predpovedá „bez návštevy", má prirodzene vysokú presnosť. Zmysluplnejší je pohľad na jednotlivé koeficienty a ich smer než na celkovú úspešnosť. Model neslúži na presnú predikciu, ale na identifikáciu determinantov.
 
 Podrobný komentovaný výklad je v **[reporte (PDF)](Projekt_ekonometria.pdf)**.
 
